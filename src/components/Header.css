@@ -1,0 +1,17 @@
+/* Header container */
+.header {
+    width: 100%;
+    padding: 1rem 20px;
+    background-color: #ffffff;
+    border: 1px solid rgba(0,0,0,0.125);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  /* Logo styling */
+  .header-logo {
+    width: 150px;
+    height: 100px;
+  }
+  
