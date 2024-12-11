@@ -7,7 +7,7 @@ const LoginForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [success, setSuccess] = useState(""); // Added for success messages
+  const [success, setSuccess] = useState(""); 
   const [loading, setLoading] = useState(false);
 
   const handleLogin = async (e) => {
@@ -79,7 +79,7 @@ const LoginForm = () => {
           </div>
           <div className="form-actions">
             <button type="submit" className="login-button" disabled={loading}>
-              Log In
+            {loading ? "Loading..." : "Log In"}
             </button>
             <div className="links">
               <a href="/forgot-password">Forgotten your username or password?</a>
