@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Header from "../components/Header";
 import "./LoginForm.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom"; 
 
 const LoginForm = () => {
   const [username, setUsername] = useState("");
@@ -9,6 +10,8 @@ const LoginForm = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(""); 
   const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -28,7 +31,7 @@ const LoginForm = () => {
         setSuccess(response.data.message || "Login successful!");
         localStorage.setItem("token", response.data.token);
         setTimeout(() => {
-          window.location.href = "/dashboard";
+          navigate("/dashboard");
         }, 1500);
       } else {
         setError(response.data.message || "Login failed.");
